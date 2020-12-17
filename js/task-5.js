@@ -1,40 +1,20 @@
-let input = prompt('Укажите пожалуйста вашу страну');
-
-let country;
-
-let result;
-
-let costOfDelivery;
-
-if (!input) {
-    console.log('Отменено пользователем!');
-} else if (input) {
-    country = input.toLowerCase();
-  switch (country) {
-        case 'китай':
-            result = 'китай';
-            costOfDelivery = 100;
-            break;
-        case 'чили':
-            result = 'чили';
-            costOfDelivery = 250;
-            break;
-        case 'австралия':
-            result = 'австралия';
-            costOfDelivery = 170;
-            break;
-        case 'индия':
-            result = 'индия';
-            costOfDelivery = 80;
-            break;
-        case 'ямайка':
-            result = 'ямайка';
-            costOfDelivery = 120;
-            break;
-        default:
-            alert('В вашей стране доставка не доступна');
+const checkForSpam = function (message) {
+    message = message.toLowerCase();
+    const arr = ['spam', 'sale'];
+    for (let item of arr) {
+        if (message.indexOf(item) > -1) {
+            return true;
+        }
     }
+    return false;
 }
-if (costOfDelivery) {
-    console.log(`Доставка в ${result} будет стоить ${costOfDelivery} кредитов`)
-}
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(checkForSpam('Latest technology news')); // false
+
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
+
+console.log(checkForSpam('Get best sale offers now!')); // true
+
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true

@@ -1,19 +1,19 @@
-let credits = 23580;
+const formatString = function(string) {
+    if (string.length > 40) {
+        string = string.substring(0, 41);
+        string = string + '...';
+    }
+    return string;
+};
 
-const pricePerDroid = 3000;
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 
-let input = prompt('Сколько вы хотите купить дроидов?');
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
 
-let totalPrice;
+console.log(formatString('Curabitur ligula sapien.'));
 
-if (!input) {
-    console.log('Отменено пользователем!');
-} else {
-    totalPrice = pricePerDroid * input;
-if (totalPrice > credits) {
-    console.log('Недостаточно средств на счету!')
-} else {
-    credits -= totalPrice;
-    console.log(`Вы купили ${input} дроидов, на счету осталось ${credits} кредитов.`);
-}
-}
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
+);

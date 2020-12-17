@@ -1,19 +1,18 @@
+let input;
 let total = 0;
+const numbers = [];
 
 while (true) {
-    let input = prompt('Введите число');
-    
-    if (input === null) {
-        alert(`Общая сумма чисел равна ${total}`);
-        break;
-    }
+  input = prompt('Введите число');
+  if (input === null) {
+    console.log('Отмена пользователем');
+    break;
+  } else {
     input = Number(input);
-
-    const notANumber = Number.isNaN(input);
-
-    if (notANumber) {
-        alert('Было введено не число, попробуйте еще раз');
-        continue;
-    }
-    total += input;
+    numbers.push(input);
+  }
 }
+for (let number of numbers) {
+  total += number;
+}
+console.log(`Общая сумма чисел равна ${total}`);
