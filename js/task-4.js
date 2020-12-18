@@ -1,9 +1,9 @@
-const formatString = function(string) {
-    if (string.length > 40) {
-        string = string.substring(0, 41);
-        string = string + '...';
-    }
-    return string;
+const formatString = function (string) {
+  if (string.length > 40) {
+    string = string.slice(0, 41);
+    string = string + '...';
+  }
+  return string;
 };
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));

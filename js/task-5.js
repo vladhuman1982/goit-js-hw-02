@@ -1,13 +1,13 @@
 const checkForSpam = function (message) {
-    message = message.toLowerCase();
-    const arr = ['spam', 'sale'];
-    for (let item of arr) {
-        if (message.indexOf(item) > -1) {
-            return true;
-        }
+  message = message.toLowerCase();
+  const arr = ['spam', 'sale'];
+  for (let item of arr) {
+    if (message.includes(item)) {
+      return true;
     }
-    return false;
-}
+  }
+  return false;
+};
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
